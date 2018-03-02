@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterMenus.master.cs" Inherits="MasterMenus" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>e-BILLS</title>
+    <link href="CSS/CSS.css" type="text/css" rev="Stylesheet" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="encabezado">
+        <table class="anchoCompleto">
+            <tr class="anchoCompleto">
+                <td class="textoIzquierda textobold ancho35Porc">
+                    <asp:Label ID="label" runat="server" Text="Empresa:" CssClass="colorObscuro" />&nbsp;
+                    <asp:Label ID="lblEmpresa" runat="server" CssClass="colorMedio" />                   
+                </td>                
+                <td class="ancho35Porc textocentradoh" rowspan="2">
+                    <asp:Image ID="imgEmp" runat="server" CssClass="alto69px" />
+                </td>
+                <td class="ancho30" rowspan="2">                    
+                    <asp:ImageButton ID="btnSalir" runat="server"  CssClass="alto40px center" ImageUrl="~/IMG/salir.png" AlternateText="Salir" ToolTip="Salir" OnClick="btnSalir_Click" OnClientClick="return confirm('¿Está seguro de salir de la aplicación?')"/>
+                    <asp:Image ID="Image1" AlternateText="e-Bills" CssClass="imagenLogo titulo center" ImageUrl="~/IMG/logo.png" runat="server" />
+                </td>
+            </tr>
+            <tr>
+                <td class="textoIzquierda textobold ancho35Porc">
+                 <asp:Label ID="lblU" runat="server" Text="Usuario:" CssClass="colorObscuro"></asp:Label>&nbsp;
+                    <asp:Label ID="lblUsuario" runat="server" CssClass="colorMedio"></asp:Label>
+                </td>
+            </tr>
+        </table>
+        <br />
+    </div>            
+        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="menu" >
+            <DynamicHoverStyle BackColor="#ffffff"/>
+            <DynamicMenuStyle BackColor="#dbdb1a" HorizontalPadding="15px" VerticalPadding="10px" />
+            <DynamicMenuItemStyle ForeColor="#dbdb1a" BackColor="#ffffff" />
+            <StaticHoverStyle BackColor="#ffffff"/>
+            <StaticMenuItemStyle CssClass="imgMenu alto40px" HorizontalPadding="15px"/>
+            <Items>
+                <asp:MenuItem ImageUrl="~/IMG/clientes.png" ToolTip="Clientes"/>
+                <asp:MenuItem ImageUrl="~/IMG/consultas.png" ToolTip="Consultas"/> 
+                <asp:MenuItem ImageUrl="~/IMG/contrasena.png" ToolTip="Cambiar Contraseña"></asp:MenuItem>
+                <asp:MenuItem ImageUrl="~/IMG/archivos.png" ToolTip="Archivos">
+                    <asp:MenuItem ToolTip="Generación de Archivo de Cobranza" ImageUrl="~/IMG/cobranza.png"/>
+                    <asp:MenuItem ToolTip="Importación de Pagos" ImageUrl="~/IMG/pagos.png" />
+                    <asp:MenuItem ToolTip="Importación de Clientes" ImageUrl="~/IMG/importarClientes.png" />
+                </asp:MenuItem>
+                <asp:MenuItem ImageUrl="~/IMG/avanzadas.png" ToolTip="Avanzadas" />
+                <asp:MenuItem ToolTip="Catálogos" ImageUrl="~/IMG/catalogos.png" >
+                    <asp:MenuItem ImageUrl="~/IMG/empresas.png" ToolTip="Empresas"/>
+                    <asp:MenuItem ToolTip="Usuarios" ImageUrl="~/IMG/usuarios.png"/>
+                    <asp:MenuItem ToolTip="Usuarios Empresas" ImageUrl="~/IMG/usuariosEmpresas.png"/>
+                    <asp:MenuItem ToolTip="Usuarios Permisos" ImageUrl="~/IMG/usuariosPermisos.png"/>
+                    <asp:MenuItem ToolTip="Bancos" ImageUrl="~/IMG/bancos.png"/>
+                    <asp:MenuItem ToolTip="Afiliaciones" ImageUrl="~/IMG/afiliaciones.png"/>
+                    <asp:MenuItem ToolTip="Usuarios Afiliación" ImageUrl="~/IMG/usuariosAfiliacion.png"/>                        
+                </asp:MenuItem>
+                <asp:MenuItem ImageUrl="~/IMG/estadisticos.png" ToolTip="Estadísticos"/>
+            </Items>            
+        </asp:Menu>             
+    <div class="ancho95 centardo">
+        
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" >
+        
+        </asp:ContentPlaceHolder>
+           <br /><br /><br />
+    </div>
+        <div class="centardo center" style="background-color:#002c81; height:30px; text-align:center; width:100%; margin: 0 auto; left:0; right:0; ">            
+            <asp:Label ID="Label2" runat="server" Text="Ver. 2.2.1 170417" CssClass="linkLimpia centardo" ForeColor="White"></asp:Label>
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="Copyrights Formula Sistemas 2015" CssClass="linkLimpia centardo" ForeColor="White"></asp:Label>
+            </div>
+    </form>
+</body>
+</html>
